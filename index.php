@@ -26,6 +26,11 @@
 if (isset($_POST['submit']))//Check if submit button is clicked
 {
 $dir = $_POST['dir'];
+$folders = scandir('.');
+var_dump($folders);
+if(!array_search("apps",$folders)) {
+  mkdir("apps");
+}
 function MakeFiles() {
     /* Setting up some default variables */
     if (isset($_POST['jquery'])) {
